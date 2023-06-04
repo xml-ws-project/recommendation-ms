@@ -24,8 +24,8 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<User> create(){
-        return  ResponseEntity.ok((userService.create()));
-    }
+//    @PostMapping("/create")
+//    public ResponseEntity<User> create(){
+//        return  ResponseEntity.ok((userService.create()));
+//    }
 }

@@ -14,14 +14,15 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    public boolean create(String userId){
+       try{
+           var newUser = User.builder().userId(userId).build();
+           userRepository.save(newUser);
+           return true;
 
-    public User create(){
-        var newUser = User.builder()
-                .userId("69")
-                .build();
-
-        userRepository.save(newUser);
-        return newUser;
+       }catch (Exception e){
+           return false;
+       }
     }
 
     public List<User> findAll(){

@@ -1,9 +1,10 @@
 package com.vima.recommendation.repository;
 
-import com.vima.recommendation.model.User;
+import com.vima.recommendation.model.Accommodation;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends Neo4jRepository<User, Long> {
+public interface AccommodationRepository extends Neo4jRepository<Accommodation, Long>{
+
 }

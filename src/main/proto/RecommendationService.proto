@@ -1,19 +1,9 @@
 syntax = "proto3";
+package com.vima.recommendation;
 
 import "Shared.proto";
 
-message UserResponse{
-    string id = 1;
-}
-
-message RecommendationResponse{
-    int32 id = 1;
-}
-
-message LONG{
-    uint64 value = 1;
-}
-
 service RecommendationService{
-    rpc findByUserId(TextMessage) returns (UserResponse);
+    rpc createUserNod(Uuid) returns (TextMessage);
+    rpc createAccomNod(Uuid) returns (TextMessage);
 }

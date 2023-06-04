@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "Shared.proto";
+
+message UserResponse{
+    string id = 1;
+}
+
+message RecommendationResponse{
+    int32 id = 1;
+}
+
+message LONG{
+    uint64 value = 1;
+}
+
+service RecommendationService{
+    rpc findByUserId(TextMessage) returns (UserResponse);
+}

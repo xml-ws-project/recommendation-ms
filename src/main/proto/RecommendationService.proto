@@ -19,4 +19,5 @@ service RecommendationService{
     rpc createAccomNode(Uuid) returns (Empty);
     rpc createReserveRel(ReserveRelationship) returns (Empty);
     rpc createRateRel(RateRelationship) returns (Empty);
+    rpc recommend(Uuid) returns ()
 }

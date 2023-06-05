@@ -6,6 +6,7 @@ import com.vima.gateway.RecommendationServiceOuterClass;
 import com.vima.gateway.Uuid;
 import com.vima.recommendation.service.AccommodationService;
 import com.vima.recommendation.service.RecommendationService;
+
 import com.vima.recommendation.service.UserService;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
@@ -53,4 +54,5 @@ public class RecommendationGrpcService extends RecommendationServiceGrpc.Recomme
         responseObserver.onNext(RecommendationServiceOuterClass.RecommendResponse.newBuilder().addAllIds(result).build());
         responseObserver.onCompleted();
     }
+
 }

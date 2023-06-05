@@ -3,6 +3,7 @@ package com.vima.gateway;
 
 import "Shared.proto";
 
+<<<<<<< HEAD
 message ReserveRelationship{
     string userId = 1;
     string accomId = 2;
@@ -24,4 +25,9 @@ service RecommendationService{
     rpc createReserveRel(ReserveRelationship) returns (Empty);
     rpc createRateRel(RateRelationship) returns (Empty);
     rpc recommend(Uuid) returns (RecommendResponse);
+=======
+service RecommendationService{
+    rpc createUserNode(Uuid) returns (Empty);
+    rpc createAccomNode(Uuid) returns (Empty);
+>>>>>>> 546ba6b0a339810fb08a0669a772b6ca2c3edc7b
 }

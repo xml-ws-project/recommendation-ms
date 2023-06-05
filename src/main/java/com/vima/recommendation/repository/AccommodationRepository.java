@@ -18,14 +18,14 @@ public interface AccommodationRepository extends Neo4jRepository<Accommodation, 
     public List<Accommodation> getHighlyRatedAccommodations(List<String> userIds);
 
     @Query("MATCH (u:User)-[:STAYED_IN]->(a:Accommodation)<-[r:RATED]-(u) " +
-            "WHERE a.accommodationId IN $0" +
+            "WHERE a.accomId IN $0 " +
             "WITH a, collect(r.value) AS grades " +
             "WHERE size([grade IN grades WHERE grade < 3]) < 5 " +
             "RETURN a")
     public List<Accommodation> filterOutPoorlyRated(List<String> accommodationIds);
 
     @Query("MATCH (a:Accommodation)<-[r:RATED]-(:User) " +
-            "WHERE a.accommodationId IN $0 " +
+            "WHERE a.accomId IN $0 " +
             "WITH a, avg(r.value) AS averageGrade " +
             "RETURN a " +
             "ORDER BY averageGrade DESC")

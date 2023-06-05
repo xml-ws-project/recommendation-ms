@@ -14,14 +14,12 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public boolean create(String userId){
+    public void create(String userId){
        try{
            var newUser = User.builder().userId(userId).build();
            userRepository.save(newUser);
-           return true;
-
        }catch (Exception e){
-           return false;
+           throw e;
        }
     }
 

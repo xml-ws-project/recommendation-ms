@@ -11,14 +11,12 @@ public class AccommodationService {
 
     private final AccommodationRepository accommodationRepository;
 
-    public boolean create(String accomId){
+    public void create(String accomId){
         try {
             var newAccom = Accommodation.builder().accomId(accomId).build();
             accommodationRepository.save(newAccom);
-            return true;
-
         }catch (Exception e){
-            return  false;
+            throw e;
         }
     }
 }

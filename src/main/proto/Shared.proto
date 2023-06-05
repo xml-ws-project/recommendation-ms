@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.vima.recommendation;
+package com.vima.gateway;
 option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";

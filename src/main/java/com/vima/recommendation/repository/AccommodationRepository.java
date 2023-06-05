@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface AccommodationRepository extends Neo4jRepository<Accommodation, Long>{
 
-    @Query("MATCH (n:Accommodation {userId: $0}) RETURN n")
+    @Query("MATCH (n:Accommodation {accomId: $0}) RETURN n")
     Optional<Accommodation> findByAccomId(String accomId);
 }

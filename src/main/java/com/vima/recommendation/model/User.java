@@ -1,5 +1,6 @@
 package com.vima.recommendation.model;
 
+import com.vima.recommendation.model.props.Rate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,10 +9,8 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
-import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
 import java.util.List;
-import java.util.UUID;
 
 @Node
 @Data
@@ -28,5 +27,5 @@ public class User {
     private List<Accommodation> accomodations;
 
     @Relationship(type = "RATED")
-    private List<Accommodation> rates;
+    private List<Rate> rates;
 }
